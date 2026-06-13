@@ -167,9 +167,9 @@ h1,h2,h3,h4{font-weight:300;line-height:1.05;letter-spacing:-.018em}
   padding:14px clamp(16px,5vw,60px);
   background:var(--glass);backdrop-filter:blur(18px) saturate(1.1);
   color:var(--ink);box-shadow:0 1px 0 var(--line)}
-.nav-brand{display:flex;align-items:center;gap:.7em;font-family:var(--font-sans);font-weight:500;
+.nav-brand{display:flex;align-items:center;gap:.5em;font-family:var(--font-sans);font-weight:500;
   font-size:15px;letter-spacing:.24em;text-transform:uppercase}
-.nav-mono{font-size:20px}
+.nav-mono{font-size:13px}
 .nav-links{display:flex;align-items:center;gap:clamp(18px,2vw,34px);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase}
 .nav-links a{position:relative;font-weight:500;opacity:.9;transition:opacity .3s}
 .nav-links a:not(.nav-cta)::after{content:"";position:absolute;left:0;bottom:-6px;height:1px;width:100%;
@@ -455,6 +455,7 @@ h1,h2,h3,h4{font-weight:300;line-height:1.05;letter-spacing:-.018em}
 .foot-grid{display:grid;grid-template-columns:1.4fr .8fr .8fr 1.2fr;gap:clamp(28px,4vw,56px)}
 .foot-mono{font-size:28px}
 .foot-brand{font-family:var(--font-sans);font-weight:500;font-size:18px;letter-spacing:.24em;text-transform:uppercase;margin-top:14px}
+.foot-founder{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-2);margin-top:8px}
 .foot-tag{color:var(--gold-2);font-style:italic;margin-top:10px;max-width:30ch}
 .foot-col{display:flex;flex-direction:column;gap:11px;font-size:14px}
 .foot-col a,.foot-col span:not(.foot-h){color:var(--muted-2);transition:color .3s}

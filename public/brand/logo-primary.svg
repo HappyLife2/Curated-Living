@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 224" role="img" aria-label="Curated Living by Melissa Fernandes">
+  <style>@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500&amp;family=Newsreader:ital@1&amp;display=swap');</style>
+  <g transform="translate(220 50)">
+    <rect x="-17" y="-17" width="34" height="34" transform="rotate(45)" fill="none" stroke="#A67C42" stroke-width="1.5"/>
+    <rect x="-8.5" y="-8.5" width="17" height="17" transform="rotate(45)" fill="#A67C42"/>
+  </g>
+  <text x="220" y="138" text-anchor="middle" font-family="'Hanken Grotesk',sans-serif" font-weight="500" font-size="33" letter-spacing="9" fill="#16140F">CURATED LIVING</text>
+  <text x="222" y="176" text-anchor="middle" font-family="'Newsreader',Georgia,serif" font-style="italic" font-size="19" fill="#7C786C">by Melissa Fernandes</text>
+</svg>

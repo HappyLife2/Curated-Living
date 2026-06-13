@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex" />
+<title>Curated Living — Logo Concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F4EE; --paper-2:#EEEBE2; --ink:#16140F; --ink-2:#201D17;
+    --muted:#7C786C; --line:#DED9CB; --brass:#A67C42; --champagne:#C7A36A;
+    --sans:'Hanken Grotesk',system-ui,sans-serif; --serif:'Newsreader',Georgia,serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:380;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:clamp(40px,6vw,90px) clamp(20px,5vw,56px)}
+  header .eyebrow{font-size:11px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--brass)}
+  header h1{font-family:var(--sans);font-weight:300;font-size:clamp(34px,5vw,60px);letter-spacing:-.02em;margin:14px 0 10px}
+  header p{color:var(--muted);max-width:60ch}
+  .rule{height:1px;background:var(--line);margin:clamp(34px,5vw,60px) 0}
+
+  .concept{display:grid;grid-template-columns:240px 1fr;gap:clamp(24px,4vw,56px);align-items:start;margin-bottom:clamp(40px,5vw,72px)}
+  .meta .num{font-family:var(--serif);font-style:italic;font-size:24px;color:var(--champagne)}
+  .meta h2{font-family:var(--sans);font-weight:400;font-size:20px;letter-spacing:-.01em;margin:6px 0 10px}
+  .meta p{font-size:13.5px;color:var(--muted);line-height:1.55}
+  .renders{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .render{border:1px solid var(--line);border-radius:4px;min-height:190px;display:flex;align-items:center;justify-content:center;padding:36px;text-align:center}
+  .render.dark{background:var(--ink);border-color:transparent}
+  @media(max-width:780px){.concept{grid-template-columns:1fr}.renders{grid-template-columns:1fr}}
+
+  /* ---- mark (cut-stone diamond) ---- */
+  .mark{display:inline-block;line-height:0;color:var(--brass)}
+  .dark .mark{color:var(--champagne)}
+  .mark svg{display:block}
+
+  /* ---- wordmark base ---- */
+  .wm{font-family:var(--sans);font-weight:500;text-transform:uppercase;color:var(--ink);letter-spacing:.24em;line-height:1}
+  .dark .wm{color:var(--paper)}
+  .tag{font-family:var(--serif);font-style:italic;font-size:.5em;letter-spacing:.02em;color:var(--muted);text-transform:none}
+  .dark .tag{color:var(--champagne)}
+
+  /* 01 horizontal lockup */
+  .l-h{display:flex;align-items:center;gap:.7em}
+  .l-h .wm{font-size:26px}
+  .l-h .sub{display:block;font-family:var(--sans);font-weight:500;font-size:9px;letter-spacing:.34em;color:var(--muted);margin-top:8px;text-transform:uppercase}
+  .dark .l-h .sub{color:var(--champagne)}
+
+  /* 02 stacked / centered */
+  .l-s{display:flex;flex-direction:column;align-items:center;gap:14px}
+  .l-s .wm{font-size:25px}
+  .l-s .tagline{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--muted)}
+  .dark .l-s .tagline{color:var(--champagne)}
+
+  /* 03 editorial serif + sans */
+  .l-e{text-align:center;line-height:.95}
+  .l-e .cur{font-family:var(--serif);font-style:italic;font-weight:300;font-size:46px;color:var(--ink);display:block}
+  .dark .l-e .cur{color:var(--paper)}
+  .l-e .liv{font-family:var(--sans);font-weight:500;text-transform:uppercase;letter-spacing:.4em;font-size:20px;color:var(--ink);display:block;margin-top:8px;padding-left:.4em}
+  .dark .l-e .liv{color:var(--paper)}
+
+  /* 04 minimal one-line */
+  .l-m{display:flex;align-items:center;gap:.55em}
+  .l-m .wm{font-size:22px;letter-spacing:.26em}
+  .l-m .dot svg{width:13px;height:13px}
+
+  /* 05 CL emblem */
+  .l-cl{display:flex;flex-direction:column;align-items:center;gap:16px}
+  .emblem{position:relative;width:96px;height:96px;display:flex;align-items:center;justify-content:center;color:var(--brass)}
+  .dark .emblem{color:var(--champagne)}
+  .emblem .cl{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-weight:500;letter-spacing:.12em;font-size:24px;color:var(--ink)}
+  .dark .emblem .cl{color:var(--paper)}
+  .l-cl .wm{font-size:14px;letter-spacing:.3em}
+
+  /* 06 stamp */
+  .stamp{border:1px solid var(--brass);border-radius:3px;padding:18px 26px;display:flex;flex-direction:column;align-items:center;gap:9px}
+  .dark .stamp{border-color:var(--champagne)}
+  .stamp .top{font-family:var(--sans);font-weight:600;font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--brass)}
+  .dark .stamp .top{color:var(--champagne)}
+  .stamp .wm{font-size:18px;letter-spacing:.22em}
+  .stamp .bot{font-family:var(--sans);font-weight:500;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+  .dark .stamp .bot{color:var(--champagne)}
+  .stamp .hr{width:30px;height:1px;background:var(--line)}
+  .dark .stamp .hr{background:rgba(199,163,106,.4)}
+
+  /* favicons row */
+  .favs{display:flex;gap:20px;align-items:flex-end;flex-wrap:wrap}
+  .fav{display:flex;flex-direction:column;align-items:center;gap:8px}
+  .fav .chip{border-radius:8px;display:flex;align-items:center;justify-content:center;background:var(--ink)}
+  .fav .lbl{font-size:11px;color:var(--muted)}
+  .fav .cl{font-family:var(--sans);font-weight:500;color:var(--champagne)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Curated Living — Brand</span>
+    <h1>Logo concepts</h1>
+    <p>Six directions, all within the established identity: minimal monochrome, a brass accent, a
+       letter-spaced sans wordmark with a whisper of editorial serif, and a geometric "cut-stone"
+       mark. Restraint over ornament — no literal pictograms. Shown on light and dark.</p>
+  </header>
+  <div class="rule"></div>
+
+  <!-- helper SVG mark is inlined per use -->
+
+  <!-- 01 -->
+  <section class="concept">
+    <div class="meta"><span class="num">01</span><h2>Horizontal lockup</h2><p>The primary signature — mark + wordmark in a row, founder line beneath. For the site header, email, letterhead.</p></div>
+    <div class="renders">
+      <div class="render light">
+        <div class="l-h">
+          <span class="mark"><svg viewBox="0 0 24 24" width="30" height="30" fill="none"><rect x="5.05" y="5.05" width="13.9" height="13.9" transform="rotate(45 12 12)" stroke="currentColor" stroke-width="1.1"/><rect x="8.45" y="8.45" width="7.1" height="7.1" transform="rotate(45 12 12)" fill="currentColor"/></svg></span>
+          <span><span class="wm">Curated Living</span><span class="sub">by Melissa Fernandes</span></span>
+        </div>
+      </div>
+      <div class="render dark">
+        <div class="l-h">
+          <span class="mark"><svg viewBox="0 0 24 24" width="30" height="30" fill="none"><rect x="5.05" y="5.05" width="13.9" height="13.9" transform="rotate(45 12 12)" stroke="currentColor" stroke-width="1.1"/><rect x="8.45" y="8.45" width="7.1" height="7.1" transform="rotate(45 12 12)" fill="currentColor"/></svg></span>
+          <span><span class="wm">Curated Living</span><span class="sub">by Melissa Fernandes</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 -->
+  <section class="concept">
+    <div class="meta"><span class="num">02</span><h2>Stacked / centered</h2><p>Formal, symmetrical lockup with the founder line in serif italic. For covers, social profile, framed contexts.</p></div>
+    <div class="renders">
+      <div class="render light">
+        <div class="l-s">
+          <span class="mark"><svg viewBox="0 0 24 24" width="34" height="34" fill="none"><rect x="5.05" y="5.05" width="13.9" height="13.9" transform="rotate(45 12 12)" stroke="currentColor" stroke-width="1.1"/><rect x="8.45" y="8.45" width="7.1" height="7.1" transform="rotate(45 12 12)" fill="currentColor"/></svg></span>
+          <span class="wm">Curated Living</span>
+          <span class="tagline">by Melissa Fernandes</span>
+        </div>
+      </div>
+      <div class="render dark">
+        <div class="l-s">
+          <span class="mark"><svg viewBox="0 0 24 24" width="34" height="34" fill="none"><rect x="5.05" y="5.05" width="13.9" height="13.9" transform="rotate(45 12 12)" stroke="currentColor" stroke-width="1.1"/><rect x="8.45" y="8.45" width="7.1" height="7.1" transform="rotate(45 12 12)" fill="currentColor"/></svg></span>
+          <span class="wm">Curated Living</span>
+          <span class="tagline">by Melissa Fernandes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 -->
+  <section class="concept">
+    <div class="meta"><span class="num">03</span><h2>Editorial — serif + sans</h2><p>"Curated" in Newsreader italic over "LIVING" in tracked sans. The most distinctive and design-forward; leans into the brand's serif accent.</p></div>
+    <div class="renders">
+      <div class="render light"><div class="l-e"><span class="cur">Curated</span><span class="liv">Living</span></div></div>
+      <div class="render dark"><div class="l-e"><span class="cur">Curated</span><span class="liv">Living</span></div></div>
+    </div>
+  </section>
+
+  <!-- 04 -->
+  <section class="concept">
+    <div class="meta"><span class="num">04</span><h2>Minimal one-line</h2><p>Ultra-restrained wordmark with the diamond as a separator. For tight spaces, footers, watermarks.</p></div>
+    <div class="renders">
+      <div class="render light">
+        <div class="l-m"><span class="wm">Curated</span><span class="mark dot"><svg viewBox="0 0 24 24" fill="none"><rect x="5.05" y="5.05" width="13.9" height="13.9" transform="rotate(45 12 12)" stroke="currentColor" stroke-width="1.4"/><rect x="9" y="9" width="6" height="6" transform="rotate(45 12 12)" fill="currentColor"/></svg></span><span class="wm">Living</span></div>
+      </div>
+      <div class="render dark">
+        <div class="l-m"><span class="wm">Curated</span><span class="mark dot"><svg viewBox="0 0 24 24" fill="none"><rect x="5.05" y="5.05" width="13.9" height="13.9" transform="rotate(45 12 12)" stroke="currentColor" stroke-width="1.4"/><rect x="9" y="9" width="6" height="6" transform="rotate(45 12 12)" fill="currentColor"/></svg></span><span class="wm">Living</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 -->
+  <section class="concept">
+    <div class="meta"><span class="num">05</span><h2>"CL" emblem</h2><p>Monogram inside the diamond — the compact brand symbol for the app icon, social avatar, and handover stamp.</p></div>
+    <div class="renders">
+      <div class="render light">
+        <div class="l-cl">
+          <div class="emblem"><svg viewBox="0 0 96 96" width="96" height="96" fill="none"><rect x="14" y="14" width="68" height="68" transform="rotate(45 48 48)" stroke="currentColor" stroke-width="1.4"/></svg><span class="cl">CL</span></div>
+          <span class="wm">Curated Living</span>
+        </div>
+      </div>
+      <div class="render dark">
+        <div class="l-cl">
+          <div class="emblem"><svg viewBox="0 0 96 96" width="96" height="96" fill="none"><rect x="14" y="14" width="68" height="68" transform="rotate(45 48 48)" stroke="currentColor" stroke-width="1.4"/></svg><span class="cl">CL</span></div>
+          <span class="wm">Curated Living</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 -->
+  <section class="concept">
+    <div class="meta"><span class="num">06</span><h2>Stamp / seal</h2><p>A bordered maker's stamp for packaging, the "styled by" tag, and photo watermarks — a premium finishing touch.</p></div>
+    <div class="renders">
+      <div class="render light">
+        <div class="stamp"><span class="top">Turnkey Furnishing</span><span class="hr"></span><span class="wm">Curated Living</span><span class="bot">Dubai · Est. 2026</span></div>
+      </div>
+      <div class="render dark">
+        <div class="stamp"><span class="top">Turnkey Furnishing</span><span class="hr"></span><span class="wm">Curated Living</span><span class="bot">Dubai · Est. 2026</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- favicons / app icons -->
+  <section>
+    <div class="meta" style="margin-bottom:24px"><span class="num">◆</span><h2 style="margin-top:6px">App icon &amp; favicon (from 05)</h2><p style="max-width:60ch">The diamond emblem scales down cleanly — the mark alone, or with "CL".</p></div>
+    <div class="favs">
+      <div class="fav"><div class="chip" style="width:88px;height:88px"><svg viewBox="0 0 24 24" width="50" height="50" fill="none"><rect x="5.05" y="5.05" width="13.9" height="13.9" transform="rotate(45 12 12)" stroke="#C7A36A" stroke-width="1.1"/><rect x="8.45" y="8.45" width="7.1" height="7.1" transform="rotate(45 12 12)" fill="#C7A36A"/></svg></div><span class="lbl">Mark · 88px</span></div>
+      <div class="fav"><div class="chip" style="width:64px;height:64px"><svg viewBox="0 0 24 24" width="36" height="36" fill="none"><rect x="5.05" y="5.05" width="13.9" height="13.9" transform="rotate(45 12 12)" stroke="#C7A36A" stroke-width="1.2"/><rect x="8.45" y="8.45" width="7.1" height="7.1" transform="rotate(45 12 12)" fill="#C7A36A"/></svg></div><span class="lbl">48px</span></div>
+      <div class="fav"><div class="chip" style="width:44px;height:44px"><svg viewBox="0 0 24 24" width="24" height="24" fill="none"><rect x="5.05" y="5.05" width="13.9" height="13.9" transform="rotate(45 12 12)" stroke="#C7A36A" stroke-width="1.4"/><rect x="9" y="9" width="6" height="6" transform="rotate(45 12 12)" fill="#C7A36A"/></svg></div><span class="lbl">32px</span></div>
+      <div class="fav"><div class="chip" style="width:64px;height:64px"><span class="cl" style="font-family:var(--sans);font-weight:500;font-size:22px;letter-spacing:.06em">CL</span></div><span class="lbl">CL · 64px</span></div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

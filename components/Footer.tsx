@@ -9,6 +9,7 @@ export default function Footer() {
         <div>
           <Monogram className="foot-mono" />
           <div className="foot-brand">{site.name}</div>
+          <div className="foot-founder">{site.founderLine}</div>
           <p className="foot-tag serif">{site.tagline}.</p>
         </div>
         <div className="foot-col">

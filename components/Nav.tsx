@@ -37,9 +37,10 @@ export default function Nav() {
   return (
     <>
       <nav className={cls} aria-label="Primary">
-        <Link href="/" className="nav-brand" onClick={() => setOpen(false)}>
+        <Link href="/" className="nav-brand" onClick={() => setOpen(false)} aria-label={site.name}>
+          <span>Curated</span>
           <Monogram className="nav-mono" />
-          <span>{site.name}</span>
+          <span>Living</span>
         </Link>
 
         <div className="nav-links">
