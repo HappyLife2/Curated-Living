@@ -5,7 +5,7 @@ import Faq from "@/components/Faq";
 import Marquee from "@/components/Marquee";
 import ProcessTimeline from "@/components/ProcessTimeline";
 import PriceExplorer from "@/components/PriceExplorer";
-import Transform from "@/components/Transform";
+import StyleSelector from "@/components/StyleSelector";
 import {
   site,
   stats,
@@ -88,27 +88,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============ TRANSFORM ============ */}
-      <section className="section dark">
-        <div className="wrap">
-          <div className="sec-head row">
-            <div data-reveal>
-              <span className="eyebrow">Keys to rent-ready</span>
-              <h2 className="kicker" style={{ marginTop: 20 }}>
-                From bare handover<br />to a home that <em>lets itself.</em>
-              </h2>
-            </div>
-            <p className="lede" style={{ maxWidth: "40ch" }} data-reveal>
-              Drag to see the difference a designer&apos;s eye and a managed procurement make — the same
-              space, before and after.
-            </p>
-          </div>
-          <div data-reveal>
-            <Transform after="/projects/showroom.jpg" alt="Dubai apartment furnished by Curated Living" />
-          </div>
-        </div>
-      </section>
-
       {/* ============ PACKAGES ============ */}
       <section className="section" id="packages">
         <div className="wrap">
@@ -153,6 +132,23 @@ export default function Home() {
           </div>
           <div data-reveal>
             <PriceExplorer />
+          </div>
+        </div>
+      </section>
+
+      {/* ============ SIGNATURE STYLES ============ */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="wrap">
+          <div className="sec-head" data-reveal>
+            <span className="eyebrow">Signature styles</span>
+            <h2 className="kicker">Every pack, in <em>three styles.</em></h2>
+            <p className="lede" style={{ maxWidth: "52ch" }}>
+              Choose the look; we tailor it to your pack and unit — the same considered aesthetic, at
+              every tier.
+            </p>
+          </div>
+          <div data-reveal>
+            <StyleSelector />
           </div>
         </div>
       </section>

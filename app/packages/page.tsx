@@ -3,6 +3,7 @@ import Link from "next/link";
 import Reveals from "@/components/Reveals";
 import Faq from "@/components/Faq";
 import PriceExplorer from "@/components/PriceExplorer";
+import StyleSelector from "@/components/StyleSelector";
 import { site, packages, unitSizes, aed, addOns } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -84,6 +85,23 @@ export default function PackagesPage() {
               </p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* signature styles */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="wrap">
+          <div className="sec-head" data-reveal>
+            <span className="eyebrow">Signature styles</span>
+            <h2 className="kicker">Every pack, in <em>three styles.</em></h2>
+            <p className="lede" style={{ maxWidth: "54ch" }}>
+              Choose the look; we tailor it to your pack and unit. The same considered aesthetic,
+              executed at each tier — so the only real decision is the feel you want.
+            </p>
+          </div>
+          <div data-reveal>
+            <StyleSelector />
+          </div>
         </div>
       </section>
 

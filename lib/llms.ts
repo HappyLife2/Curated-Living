@@ -4,6 +4,7 @@ import {
   site,
   stats,
   packages,
+  styles,
   processSteps,
   works,
   communities,
@@ -46,6 +47,9 @@ export function llmsIndex(): string {
     ...packages.map(
       (p) => `- [${p.name}](${site.url}/packages#${p.slug}): for ${p.for}; ${p.start} — ${p.blurb}`
     ),
+    "",
+    "## Signature styles (shared across every pack)",
+    ...styles.map((s) => `- ${s.name} — ${s.tagline}: ${s.desc} Best for: ${s.bestFor}.`),
     "",
     "## How it works (2–4 weeks)",
     ...processSteps.map((s) => `- ${s.day} — ${s.title}: ${s.body}`),

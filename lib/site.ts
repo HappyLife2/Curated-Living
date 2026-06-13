@@ -167,6 +167,48 @@ export const packages: Package[] = [
 // Helper: tidy AED formatting (deterministic — no locale → no hydration mismatch).
 export const aed = (n: number) => "AED " + n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
+/* ===================== Signature styles ===================== */
+// Three styles, shared across every pack — pick a look, applied at the pack's tier.
+export type Style = {
+  slug: string;
+  name: string;
+  tagline: string;
+  desc: string;
+  palette: string[]; // swatch hexes
+  image: string;
+  bestFor: string;
+};
+
+export const styles: Style[] = [
+  {
+    slug: "monochrome",
+    name: "Neutral Monochrome",
+    tagline: "Minimal · black accents",
+    desc: "A pared-back, monochromatic base of off-whites and soft greys, anchored by black accents and lifted with a few warm accent touches. Clean, architectural and broadly lettable.",
+    palette: ["#F1EFE9", "#A7A29A", "#1C1B18", "#BE7A4B"],
+    image: "/projects/showroom.jpg",
+    bestFor: "Modern apartments · long-let",
+  },
+  {
+    slug: "modern-luxe",
+    name: "Modern Luxe",
+    tagline: "Warm neutrals · brass",
+    desc: "Sophisticated and warm — beige and taupe tones, layered textures and gold/brass accents. Reads premium and considered without ever feeling cold.",
+    palette: ["#ECE4D6", "#CBB89B", "#A78A57", "#5E513C"],
+    image: "/projects/aura.jpg",
+    bestFor: "Premium rentals · Downtown & Marina",
+  },
+  {
+    slug: "light-coastal",
+    name: "Light Coastal",
+    tagline: "Airy · natural · relaxed",
+    desc: "Light and breezy — soft whites, sea-glass tones, pale woods and natural textures. Effortless and highly photogenic; the natural fit for beachfront homes and short-lets.",
+    palette: ["#F4F2EB", "#CBDAD7", "#DDCBAD", "#86A39C"],
+    image: "/projects/bedroom.jpg",
+    bestFor: "Beachfront · holiday homes & short-let",
+  },
+];
+
 /* ===================== Process (2–4 weeks) ===================== */
 export type Step = { day: string; title: string; body: string };
 
@@ -358,6 +400,10 @@ export const faqs: Faq[] = [
   {
     q: "How does pricing work?",
     a: "The Essential, Premium and Holiday Home packs are a fixed, all-in price set by unit size — from AED 15,000 for an Essential studio up to AED 34,000 for a Holiday Home four-bed, furniture included. Holiday Home sits AED 4,000 above Premium at every size because it includes the basic OS&E a short-let needs — cutlery, crockery, linens and kitchen kit — as standard. No budget guesswork. The Bespoke service is for 1-bed and larger homes (it isn't offered for studios): a fixed design fee by unit size (from AED 7,000 for a 1-bed), furniture billed transparently at cost, plus a flat 10% management fee on the total furnishing value. An optional Electronics Pack (TV, microwave, kettle, etc.) can be added to any pack.",
+  },
+  {
+    q: "Can I choose the style?",
+    a: "Yes — every pack comes in three signature styles: Neutral Monochrome (minimal, off-white with black accents), Modern Luxe (warm beige and taupe with brass), and Light Coastal (airy and natural — ideal for beachfront homes and short-lets). You pick the look and we execute it at your pack's tier. If you'd prefer something entirely your own, that's the Bespoke service.",
   },
   {
     q: "How long does it take?",

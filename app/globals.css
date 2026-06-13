@@ -331,6 +331,20 @@ h1,h2,h3,h4{font-weight:300;line-height:1.05;letter-spacing:-.018em}
 .px-sub{font-size:12.5px;color:var(--muted);line-height:1.5}
 .px-note{margin-top:clamp(28px,3vw,40px);font-size:12.5px;color:var(--muted);max-width:60ch;line-height:1.6}
 
+/* ============ style selector ============ */
+.sty-tabs{display:inline-flex;flex-wrap:wrap;gap:8px;border:1px solid var(--line);border-radius:3px;padding:6px;margin-bottom:clamp(28px,3vw,48px)}
+.sty-tab{padding:.7em 1.25em;border-radius:2px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;color:var(--muted);transition:background .35s,color .35s}
+.sty-tab:hover{color:var(--ink)}
+.sty-tab.active{background:var(--ink);color:var(--paper)}
+.sty-body{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,64px);align-items:center}
+.sty-media{position:relative;aspect-ratio:4/3;border-radius:3px;overflow:hidden;background:var(--ink);animation:styin .6s ease}
+@keyframes styin{from{opacity:0;transform:scale(1.02)}to{opacity:1;transform:none}}
+.sty-name{font-family:var(--font-sans);font-weight:300;font-size:clamp(26px,3vw,40px);margin-top:14px;line-height:1.05}
+.sty-palette{display:flex;gap:12px;margin-top:26px}
+.sty-sw{width:36px;height:36px;border-radius:50%;border:1px solid var(--line-2);box-shadow:inset 0 0 0 1px rgba(0,0,0,.05)}
+.sty-best{margin-top:22px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+@media (max-width:860px){ .sty-body{grid-template-columns:1fr} }
+
 /* ============ feature rows ============ */
 .frow{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,48px)}
 .fcard{padding-top:26px;border-top:1px solid var(--line-d)}

@@ -145,6 +145,15 @@ always investors, better served by a fixed pack).
 - Furniture billed at cost — fully transparent
 - Procurement, delivery, install & styling
 
+### Signature styles (shared across every fixed pack)
+Three styles, **not per-pack** — the same aesthetic is executed at each pack's tier, which keeps the
+sourcing matrix small (3 styles, not 3 × packs). Start with these three; expand only on real demand.
+1. **Neutral Monochrome** — minimal, off-white & soft grey with black accents and warm accent pops. (Modern apartments · long-let.)
+2. **Modern Luxe** — warm beige/taupe, layered textures, gold/brass accents. (Premium rentals · Downtown & Marina.)
+3. **Light Coastal** — airy whites, sea-glass tones, natural woods. (Beachfront · holiday homes & short-let.)
+
+Bespoke has no preset style — it's custom by definition.
+
 **Scope guardrails (what Curated Living does NOT do):** technical drawings, authority approvals,
 joinery/contracting, renovation, MEP — those belong to Atelier Madonna / fit-out firms. Holding
 this line is what keeps the model fast and solo-able.
