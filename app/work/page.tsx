@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Reveals from "@/components/Reveals";
-import { site, works, communities } from "@/lib/site";
+import { site, works } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Work — Furnished Homes Across Dubai",
@@ -21,8 +21,8 @@ export default function WorkPage() {
             Empty to <em>rent-ready.</em>
           </h1>
           <p className="lede" style={{ maxWidth: "54ch" }}>
-            Real units, finished and handed back across Dubai&apos;s prime communities. Photography
-            here is representative while we build the gallery of completed homes.
+            Real units, finished and handed back across Dubai. Photography here is representative
+            while we build the gallery of completed homes.
           </p>
         </div>
       </header>
@@ -41,24 +41,6 @@ export default function WorkPage() {
                 />
                 <figcaption>{w.name} · {w.location}</figcaption>
               </figure>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section dark">
-        <div className="wrap">
-          <div className="sec-head" data-reveal>
-            <span className="eyebrow">Where we work</span>
-            <h2 className="kicker">Concentrated in the<br /><em>investor communities.</em></h2>
-          </div>
-          <div className="comm" data-reveal>
-            {communities.map((c) => (
-              <Link href="/contact" key={c.name}>
-                <span className="ci" aria-hidden>→</span>
-                <span className="cn">{c.name}</span>
-                <span className="cs">{c.note}</span>
-              </Link>
             ))}
           </div>
         </div>

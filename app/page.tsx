@@ -12,7 +12,6 @@ import {
   marquee,
   packages,
   differentiators,
-  communities,
   works,
   testimonials,
 } from "@/lib/site";
@@ -221,30 +220,6 @@ export default function Home() {
           <p className="quote-attr" data-reveal>
             <b>{feature.who}</b> · {feature.context}
           </p>
-        </div>
-      </section>
-
-      {/* ============ COMMUNITIES ============ */}
-      <section className="section dark">
-        <div className="wrap">
-          <div className="sec-head row">
-            <div data-reveal>
-              <span className="eyebrow">Where we work</span>
-              <h2 className="kicker" style={{ marginTop: 20 }}>Dubai&apos;s prime<br />communities.</h2>
-            </div>
-            <p className="lede" style={{ maxWidth: "36ch" }} data-reveal>
-              Concentrated where the demand and new handovers are. Elsewhere in the city? Just ask.
-            </p>
-          </div>
-          <div className="comm" data-reveal>
-            {communities.map((c) => (
-              <Link href="/contact" key={c.name}>
-                <span className="ci" aria-hidden>→</span>
-                <span className="cn">{c.name}</span>
-                <span className="cs">{c.note}</span>
-              </Link>
-            ))}
-          </div>
         </div>
       </section>
 
