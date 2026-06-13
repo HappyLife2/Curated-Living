@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Bodoni_Moda, Fraunces, Hanken_Grotesk } from "next/font/google";
+import { Hanken_Grotesk, Newsreader } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
 import SmoothScroll from "@/components/SmoothScroll";
@@ -10,24 +10,17 @@ import JsonLd from "@/components/JsonLd";
 import Preloader from "@/components/Preloader";
 import Analytics from "@/components/Analytics";
 
-// Didone display + wordmark — high-contrast, editorial.
-const bodoni = Bodoni_Moda({
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-  variable: "--font-bodoni",
-  display: "swap",
-});
-// Optical editorial serif for italic accents & pull-quotes.
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-  variable: "--font-fraunces",
-  display: "swap",
-});
-// Clean grotesque for body & UI.
+// Clean grotesque — the backbone: display headings, wordmark, body & UI.
 const hanken = Hanken_Grotesk({
   subsets: ["latin"],
-  variable: "--font-hanken",
+  variable: "--font-sans",
+  display: "swap",
+});
+// Elegant low-contrast serif — used only as a whisper of italic accent.
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  variable: "--font-serif",
   display: "swap",
 });
 
@@ -88,7 +81,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#10130F",
+  themeColor: "#16140F",
   width: "device-width",
   initialScale: 1,
 };
@@ -96,7 +89,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${bodoni.variable} ${fraunces.variable} ${hanken.variable}`}>
+      <body className={`${hanken.variable} ${newsreader.variable}`}>
         <Preloader />
         <JsonLd />
         <SmoothScroll />

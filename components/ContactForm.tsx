@@ -4,9 +4,10 @@ import { useState } from "react";
 import Select from "./Select";
 
 const TYPES = [
-  "Investor Essential — 1BR / studio to let",
-  "Premium Living — elevated home",
-  "Holiday Home — short-let / Airbnb",
+  "Essential pack",
+  "Premium pack",
+  "Holiday Home pack",
+  "Bespoke — fully custom",
   "Multiple units / portfolio",
   "Referral partner enquiry",
   "Not sure yet",

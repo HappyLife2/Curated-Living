@@ -52,68 +52,109 @@ export const marquee = [
 ] as const;
 
 /* ===================== Packages ===================== */
+// Unit sizes drive the fixed pricing across packs.
+export const unitSizes = ["Studio", "1 BHK", "2 BHK", "3 BHK", "4 BHK"] as const;
+export type UnitSize = (typeof unitSizes)[number];
+
 export type Package = {
   slug: string;
   name: string;
+  tagline: string;
   for: string;
-  price: string;
-  priceNote: string;
   blurb: string;
   points: string[];
   featured?: boolean;
+  model: "fixed" | "bespoke";
+  // Fixed packs: full furnishing price per unit size (AED). Bespoke: design fee per unit size.
+  prices?: number[];
+  designFee?: number[];
+  start: string; // card display, e.g. "from AED 15,000"
+  priceNote: string;
 };
 
 export const packages: Package[] = [
   {
-    slug: "investor-essential",
-    name: "Investor Essential",
-    for: "Studio & 1-bedroom · to let",
-    price: "from AED 5,000",
-    priceNote: "fee + 10% procurement, or turnkey package",
+    slug: "essential",
+    name: "Essential",
+    tagline: "The standard pack",
+    for: "Studio – 4 BHK · to let",
     blurb:
-      "A complete, rental-ready furnishing for investors and landlords who want the unit earning — fast, considered, and durable.",
+      "A complete, rental-ready home at a fixed price. Everything an investor needs to put a unit on the market — chosen by a designer, not a catalogue.",
     points: [
-      "Furnishing concept + curated furniture selection",
-      "Trade procurement & supplier coordination",
-      "Delivery coordination + installation oversight",
-      "Final styling & soft furnishings",
-      "Tenant-ready handover",
+      "Full furniture across every room",
+      "Lighting, soft furnishings & essentials",
+      "Procurement, delivery & installation",
+      "Styling & tenant-ready handover",
+      "Fixed price — no surprises",
     ],
+    model: "fixed",
+    prices: [15000, 17000, 20000, 23000, 26000],
+    start: "from AED 15,000",
+    priceNote: "fully furnished · fixed by unit size",
   },
   {
-    slug: "premium-living",
-    name: "Premium Living",
-    for: "Elevated homes & premium rentals",
-    price: "from AED 9,000",
-    priceNote: "fee + procurement, scaled to the budget",
+    slug: "premium",
+    name: "Premium",
+    tagline: "Elevated furnishing",
+    for: "Studio – 4 BHK",
     blurb:
-      "A step up in materiality and detail — for owners and premium rentals that need to feel considered, not catalogue.",
+      "A step up in materiality and detail, still at a fixed price — for owners and premium rentals that need to feel considered, not standard.",
     points: [
-      "Everything in Investor Essential",
+      "Everything in Essential",
       "Higher-end furniture & decorative lighting",
       "Artwork & curated accessories",
-      "Layered soft furnishings & textiles",
+      "Layered textiles & soft furnishings",
       "Full turnkey handover",
     ],
     featured: true,
+    model: "fixed",
+    prices: [19000, 21000, 24000, 27000, 30000],
+    start: "from AED 19,000",
+    priceNote: "fully furnished · fixed by unit size",
   },
   {
     slug: "holiday-home",
     name: "Holiday Home",
-    for: "Airbnb & short-let operators",
-    price: "from AED 7,500",
-    priceNote: "per unit · re-style cycles available",
+    tagline: "Airbnb & short-let",
+    for: "Studio – 4 BHK · guest-ready",
     blurb:
       "Furnishing and styling tuned for short-let durability and broad guest appeal — handed over photo-ready for the listing.",
     points: [
-      "Guest-ready furnishing & durable specification",
+      "Durable, guest-ready specification",
       "Styling for broad short-let appeal",
       "Photography-ready setup for listings",
-      "Guest-ready accessories — the hotel touches",
+      "Guest essentials — the hotel touches",
       "Optional re-style & refresh cycles",
     ],
+    model: "fixed",
+    // NOTE: Holiday Home pricing not yet specified — mirrors Premium as a placeholder; confirm with Melissa.
+    prices: [19000, 21000, 24000, 27000, 30000],
+    start: "from AED 19,000",
+    priceNote: "guest-ready & photographed · indicative",
+  },
+  {
+    slug: "bespoke",
+    name: "Bespoke",
+    tagline: "Fully custom",
+    for: "Owner-occupiers · Studio – 4 BHK",
+    blurb:
+      "For owners who'll live in the home and want something personal, not a pack. A custom scheme designed around you — the service most furnishing companies don't offer.",
+    points: [
+      "A custom scheme designed to your taste",
+      "Fixed design fee by unit size",
+      "Furniture billed at cost — fully transparent",
+      "Procurement, delivery, install & styling",
+      "Living-in luxury, not a generic pack",
+    ],
+    model: "bespoke",
+    designFee: [5000, 7000, 10000, 13000, 16000],
+    start: "design fee from AED 5,000",
+    priceNote: "design fee + furniture at cost + 5–10%",
   },
 ];
+
+// Helper: tidy AED formatting (deterministic — no locale → no hydration mismatch).
+export const aed = (n: number) => "AED " + n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 /* ===================== Process (2–4 weeks) ===================== */
 export type Step = { day: string; title: string; body: string };
@@ -160,8 +201,8 @@ export const differentiators = [
   },
   {
     n: "03",
-    title: "One point of contact",
-    body: "No coordinating eight suppliers, three delivery windows and a handyman. You hand over keys and a budget; we return a finished home. The whole project runs through one person, end to end.",
+    title: "Fixed prices, or fully bespoke",
+    body: "Most companies sell you a rigid pack. We offer both: transparent fixed-price packs when you just need it done, and a fully bespoke service for owners who'll live in the home and want something personal — the option most furnishing companies simply don't offer.",
   },
 ];
 
@@ -305,7 +346,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "How does pricing work?",
-    a: "Two simple structures. Either a fixed design & styling fee plus a procurement management fee (around 10% of the furnishing budget), or a single turnkey package price where we quote one number and handle everything. For a 1-bedroom you'd typically expect the fee to start around AED 5,000; the furnishing budget itself is separate and yours.",
+    a: "The Essential, Premium and Holiday Home packs are a fixed, all-in price set by unit size — from AED 15,000 for an Essential studio up to AED 30,000 for a Premium four-bed, furniture included. No budget guesswork. The Bespoke service is different: a fixed design fee by unit size (from AED 5,000 for a studio), the furniture billed transparently at cost, plus a 5–10% management fee on the total furnishing value.",
   },
   {
     q: "How long does it take?",

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Reveals from "@/components/Reveals";
 import ProcessTimeline from "@/components/ProcessTimeline";
-import ReturnsCalculator from "@/components/ReturnsCalculator";
+import PriceExplorer from "@/components/PriceExplorer";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -43,12 +43,12 @@ export default function ProcessPage() {
               <h2 className="kicker" style={{ marginTop: 20 }}>Priced before<br />you commit.</h2>
             </div>
             <p className="lede" style={{ maxWidth: "40ch" }} data-reveal>
-              Slide the furnishing budget to see both ways we charge. Every unit is then quoted
-              precisely to its brief.
+              Pick a unit size to see each pack&apos;s fixed, all-in price — or the bespoke design fee.
+              Every unit is then confirmed with a written quote.
             </p>
           </div>
           <div data-reveal>
-            <ReturnsCalculator />
+            <PriceExplorer />
           </div>
         </div>
       </section>

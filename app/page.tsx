@@ -4,7 +4,7 @@ import Reveals from "@/components/Reveals";
 import Faq from "@/components/Faq";
 import Marquee from "@/components/Marquee";
 import ProcessTimeline from "@/components/ProcessTimeline";
-import ReturnsCalculator from "@/components/ReturnsCalculator";
+import PriceExplorer from "@/components/PriceExplorer";
 import Transform from "@/components/Transform";
 import {
   site,
@@ -30,23 +30,22 @@ export default function Home() {
         <div className="hero-grain" />
         <div className="hero-meta">
           <span>Turnkey furnishing</span>
-          <span>FF&amp;E · Styling · Handover</span>
+          <span>Fixed-price &amp; bespoke</span>
           <span>Dubai</span>
         </div>
         <div className="hero-inner wrap">
-          <span className="eyebrow" style={{ color: "var(--sage)" }}>Curated Living — {site.founderLine}</span>
-          <h1 style={{ marginTop: 18 }}>
-            <span className="ov"><span className="hl">Hand over</span></span>
-            <span className="ov"><span className="hl">the keys.</span></span>
+          <span className="eyebrow" style={{ color: "var(--gold-2)" }}>Curated Living — {site.founderLine}</span>
+          <h1 style={{ marginTop: 20 }}>
+            <span className="ov"><span className="hl">Hand over the keys.</span></span>
             <span className="ov"><span className="hl"><em>We hand back a home.</em></span></span>
           </h1>
           <p className="hero-sub">
-            Designer-led turnkey furnishing for Dubai property investors. Give us an empty
-            apartment — in two to four weeks we return it furnished, styled and rent-ready.
+            Designer-led turnkey furnishing for Dubai homes — fixed-price packs or a fully bespoke
+            scheme. Give us an empty apartment; in two to four weeks it&apos;s furnished, styled and ready.
           </p>
           <div className="hero-cta on-dark">
             <Link href="/contact" className="btn">Get a quote <span className="arr">→</span></Link>
-            <Link href="/packages" className="btn-ghost">See the packages</Link>
+            <Link href="/packages" className="btn-ghost">View packages</Link>
           </div>
         </div>
         <div className="hero-scroll"><span>Scroll</span><i /></div>
@@ -61,20 +60,19 @@ export default function Home() {
             <div data-reveal>
               <span className="eyebrow">The idea</span>
               <p className="statement" style={{ marginTop: 24 }}>
-                Most investors don&apos;t want <em>design</em>. They want a finished apartment —
-                without the suppliers, the deliveries, the months.
+                A finished home, without the suppliers, the deliveries, or the <em>months.</em>
               </p>
             </div>
-            <div data-reveal style={{ paddingTop: 8 }}>
+            <div data-reveal style={{ paddingTop: 6 }}>
               <p className="lede">
-                Curated Living sits between the generic furniture-pack companies and the slow,
-                expensive design studios. The taste and judgement of a senior FF&amp;E designer,
-                delivered as a fast, packaged service — so an empty unit becomes a rent-ready home
-                in weeks, not months.
+                Curated Living sits between the generic furniture-pack companies and the slow, expensive
+                design studios — the taste of a senior FF&amp;E designer, delivered as a fast, fixed-price
+                service. And for owners who want something personal, a fully bespoke option most companies
+                simply don&apos;t offer.
               </p>
               <p className="lede" style={{ marginTop: 18 }}>
-                You hand over the keys and a budget. We handle sourcing, procurement, delivery,
-                installation and styling, and give you back somewhere a tenant wants to live.
+                You hand over the keys. We handle sourcing, procurement, delivery, installation and styling
+                — and give you back somewhere a tenant, a guest, or you, will want to live.
               </p>
             </div>
           </div>
@@ -100,9 +98,9 @@ export default function Home() {
                 From bare handover<br />to a home that <em>lets itself.</em>
               </h2>
             </div>
-            <p className="lede" style={{ maxWidth: "42ch" }} data-reveal>
-              Drag to see the difference a designer&apos;s eye and a managed procurement make — the
-              same space, before and after.
+            <p className="lede" style={{ maxWidth: "40ch" }} data-reveal>
+              Drag to see the difference a designer&apos;s eye and a managed procurement make — the same
+              space, before and after.
             </p>
           </div>
           <div data-reveal>
@@ -117,9 +115,9 @@ export default function Home() {
           <div className="sec-head row">
             <div data-reveal>
               <span className="eyebrow">What you can book</span>
-              <h2 className="kicker" style={{ marginTop: 20 }}>Three ways to a<br />finished home.</h2>
+              <h2 className="kicker" style={{ marginTop: 20 }}>Four ways to a<br />finished home.</h2>
             </div>
-            <Link href="/packages" className="link-u" data-reveal>Full package detail →</Link>
+            <Link href="/packages" className="link-u" data-reveal>Full pricing →</Link>
           </div>
           <div className="pkg-grid">
             {packages.map((p) => (
@@ -128,12 +126,12 @@ export default function Home() {
                 <span className="pkg-for">{p.for}</span>
                 <h3 className="pkg-name">{p.name}</h3>
                 <div className="pkg-price">
-                  {p.price}
+                  {p.start}
                   <small>{p.priceNote}</small>
                 </div>
                 <div className="pkg-rule" />
                 <div className="pkg-list">
-                  {p.points.map((pt) => (
+                  {p.points.slice(0, 4).map((pt) => (
                     <span className="pkg-li" key={pt}>{pt}</span>
                   ))}
                 </div>
@@ -146,6 +144,19 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ============ PRICE EXPLORER ============ */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="wrap">
+          <div className="sec-head" data-reveal>
+            <span className="eyebrow">Transparent pricing</span>
+            <h2 className="kicker">Pick a size.<br /><em>See the price.</em></h2>
+          </div>
+          <div data-reveal>
+            <PriceExplorer />
+          </div>
+        </div>
+      </section>
+
       {/* ============ PROCESS ============ */}
       <section className="section dark">
         <div className="wrap">
@@ -153,39 +164,39 @@ export default function Home() {
             <span className="eyebrow">How it works</span>
             <h2 className="kicker">Rent-ready in <em>two to four weeks.</em></h2>
             <p className="lede" style={{ maxWidth: "52ch" }}>
-              No drawings, no contractors, no renovation. One designer, one point of contact, one
-              finished home — on a timeline an investor can plan around.
+              No drawings, no contractors, no renovation. One designer, one point of contact, one finished
+              home — on a timeline you can plan around.
             </p>
           </div>
           <ProcessTimeline />
-          <div data-reveal style={{ marginTop: 48 }}>
-            <Link href="/process" className="btn-ghost on-dark-cta" style={{ color: "var(--alabaster)", borderColor: "var(--alabaster)" }}>
-              See the full process
-            </Link>
+          <div data-reveal style={{ marginTop: 48 }} className="on-dark">
+            <Link href="/process" className="btn-ghost">See the full process</Link>
           </div>
         </div>
       </section>
 
-      {/* ============ CALCULATOR ============ */}
+      {/* ============ WORK ============ */}
       <section className="section">
         <div className="wrap">
           <div className="sec-head row">
             <div data-reveal>
-              <span className="eyebrow">The numbers</span>
-              <h2 className="kicker" style={{ marginTop: 20 }}>Transparent from<br />the first message.</h2>
+              <span className="eyebrow">Selected work</span>
+              <h2 className="kicker" style={{ marginTop: 20 }}>Finished homes,<br />across Dubai.</h2>
             </div>
-            <p className="lede" style={{ maxWidth: "40ch" }} data-reveal>
-              Move the budget to see how we charge — a fixed fee plus 10% procurement, or one
-              turnkey price with everything handled.
-            </p>
+            <Link href="/work" className="link-u" data-reveal>View all work →</Link>
           </div>
-          <div data-reveal>
-            <ReturnsCalculator />
+          <div className="grid-gal">
+            {works.slice(0, 4).map((w, idx) => (
+              <figure className={idx < 2 ? "g-half" : idx === 2 ? "g-wide" : "g-tall"} key={w.slug} data-reveal>
+                <Image src={w.image} alt={`${w.name} — ${w.location}`} fill sizes="(max-width:860px) 100vw, 50vw" style={{ objectFit: "cover" }} />
+                <figcaption>{w.name} · {w.location}</figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ============ WHY DESIGNER-LED ============ */}
+      {/* ============ WHY ============ */}
       <section className="section dark">
         <div className="wrap">
           <div className="sec-head" data-reveal>
@@ -204,57 +215,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============ WORK (pinned horizontal) ============ */}
-      <section className="hscroll" data-hscroll aria-label="Selected work">
-        <div className="hscroll-track" data-hscroll-track>
-          <div className="hscroll-intro">
-            <span className="eyebrow" style={{ color: "var(--sage)" }}>Selected work</span>
-            <h2 className="kicker" style={{ marginTop: 20, fontSize: "clamp(30px,4vw,52px)" }}>
-              Finished homes, across Dubai.
-            </h2>
-            <p className="lede" style={{ color: "var(--muted-2)", marginTop: 18 }}>
-              A selection of units taken from empty to rent-ready.
-            </p>
-            <Link href="/work" className="link-u" style={{ display: "inline-block", marginTop: 20, color: "var(--sage)" }}>
-              View all work →
-            </Link>
-          </div>
-          {works.slice(0, 5).map((w) => (
-            <article className="gcard" key={w.slug}>
-              <Image src={w.image} alt={`${w.name} — ${w.location}`} fill sizes="(max-width:860px) 74vw, 560px" style={{ objectFit: "cover" }} />
-              <div className="gcard-cap">
-                <div className="t">{w.name}</div>
-                <div className="s">{w.type} · {w.location}</div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* ============ COMMUNITIES ============ */}
-      <section className="section dark">
-        <div className="wrap">
-          <div className="sec-head row">
-            <div data-reveal>
-              <span className="eyebrow">Where we work</span>
-              <h2 className="kicker" style={{ marginTop: 20 }}>Dubai&apos;s prime<br />investor communities.</h2>
-            </div>
-            <p className="lede" style={{ maxWidth: "38ch" }} data-reveal>
-              Concentrated where the rental demand and new handovers are. Elsewhere in the city? Just ask.
-            </p>
-          </div>
-          <div className="comm" data-reveal>
-            {communities.map((c) => (
-              <Link href="/contact" className="comm-cell" key={c.name}>
-                <span className="ci" aria-hidden>→</span>
-                <span className="cn">{c.name}</span>
-                <span className="cs">{c.note}</span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ============ TESTIMONIAL ============ */}
       <section className="section">
         <div className="wrap-n" style={{ textAlign: "center" }}>
@@ -268,25 +228,47 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ============ COMMUNITIES ============ */}
+      <section className="section dark">
+        <div className="wrap">
+          <div className="sec-head row">
+            <div data-reveal>
+              <span className="eyebrow">Where we work</span>
+              <h2 className="kicker" style={{ marginTop: 20 }}>Dubai&apos;s prime<br />communities.</h2>
+            </div>
+            <p className="lede" style={{ maxWidth: "36ch" }} data-reveal>
+              Concentrated where the demand and new handovers are. Elsewhere in the city? Just ask.
+            </p>
+          </div>
+          <div className="comm" data-reveal>
+            {communities.map((c) => (
+              <Link href="/contact" key={c.name}>
+                <span className="ci" aria-hidden>→</span>
+                <span className="cn">{c.name}</span>
+                <span className="cs">{c.note}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ============ PARTNERS BAND ============ */}
       <section className="section tight">
         <div className="wrap">
           <div className="band" data-reveal>
             <div>
-              <span className="eyebrow" style={{ color: "var(--sage)" }}>For brokers &amp; agents</span>
+              <span className="eyebrow" style={{ color: "var(--gold-2)" }}>For brokers &amp; agents</span>
               <h2 style={{ marginTop: 18 }}>
                 Send us your buyers.<br /><em>Keep the relationship.</em>
               </h2>
               <p>
-                You introduce a completing investor; we furnish the unit and pay you a referral fee
-                on handover. Your client is looked after, and you do none of the running.
+                You introduce a completing investor; we furnish the unit and pay you a referral fee on
+                handover. Your client is looked after, and you do none of the running.
               </p>
             </div>
             <div className="on-dark" style={{ display: "flex", flexDirection: "column", gap: 14, alignItems: "flex-start" }}>
-              <Link href="/partners" className="btn" style={{ background: "var(--sage)", color: "var(--evergreen-dk)" }}>
-                The partner programme <span className="arr">→</span>
-              </Link>
-              <Link href="/contact" className="link-u" style={{ color: "var(--sage)" }}>Become a partner →</Link>
+              <Link href="/partners" className="btn btn-gold">The partner programme <span className="arr">→</span></Link>
+              <Link href="/contact" className="link-u" style={{ color: "var(--gold-2)" }}>Become a partner →</Link>
             </div>
           </div>
         </div>
@@ -298,12 +280,12 @@ export default function Home() {
       {/* ============ FINAL CTA ============ */}
       <section className="section dark" style={{ textAlign: "center" }}>
         <div className="wrap-n">
-          <h2 className="kicker center" data-reveal style={{ fontSize: "clamp(34px,6vw,84px)" }}>
+          <h2 className="kicker center" data-reveal style={{ fontSize: "clamp(34px,6vw,80px)" }}>
             Hand over the keys.
           </h2>
           <p className="lede" data-reveal style={{ margin: "22px auto 0", textAlign: "center" }}>
-            Tell us about the unit. You&apos;ll have a furnished, styled, rent-ready home before
-            you&apos;ve finished thinking about it.
+            Tell us about the unit. You&apos;ll have a furnished, styled, ready home before you&apos;ve
+            finished thinking about it.
           </p>
           <div data-reveal style={{ marginTop: 34, display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }} className="on-dark">
             <Link href="/contact" className="btn">Get a quote <span className="arr">→</span></Link>

@@ -80,7 +80,7 @@ export default function PartnersPage() {
               </p>
             </div>
             <div className="on-dark" style={{ display: "flex", flexDirection: "column", gap: 14, alignItems: "flex-start" }}>
-              <Link href="/contact" className="btn" style={{ background: "var(--sage)", color: "var(--evergreen-dk)" }}>
+              <Link href="/contact" className="btn btn-sage">
                 Apply to partner <span className="arr">→</span>
               </Link>
               <a href={`https://wa.me/${site.whatsapp}`} className="link-u" style={{ color: "var(--sage)" }} target="_blank" rel="noopener noreferrer">

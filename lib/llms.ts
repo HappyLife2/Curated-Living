@@ -44,7 +44,7 @@ export function llmsIndex(): string {
     "",
     "## Packages",
     ...packages.map(
-      (p) => `- [${p.name}](${site.url}/packages#${p.slug}): for ${p.for}; ${p.price} — ${p.blurb}`
+      (p) => `- [${p.name}](${site.url}/packages#${p.slug}): for ${p.for}; ${p.start} — ${p.blurb}`
     ),
     "",
     "## How it works (2–4 weeks)",

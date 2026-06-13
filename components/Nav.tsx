@@ -1,18 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { nav, site } from "@/lib/site";
 import Monogram from "./Monogram";
 
 /**
  * Centered top navigation that condenses into a glassmorphic pill on scroll.
- * Light text over the homepage hero; ink text on inner pages. Full-screen menu on mobile.
+ * Every page opens on a dark hero/header, so the nav is light at the top and
+ * becomes the glass pill (ink text) once scrolled. Full-screen menu on mobile.
  */
 export default function Nav() {
-  const pathname = usePathname();
-  const isHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -31,8 +29,8 @@ export default function Nav() {
     };
   }, [open]);
 
-  const overHero = isHome && !scrolled;
-  const cls = ["nav", scrolled ? "scrolled" : "", overHero ? "" : "nav-solid", open ? "nav-open" : ""]
+  // Light/transparent over the dark hero at the top of every page; glass pill on scroll.
+  const cls = ["nav", scrolled ? "scrolled" : "", open ? "nav-open" : ""]
     .filter(Boolean)
     .join(" ");
 
