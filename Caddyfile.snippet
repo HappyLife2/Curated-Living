@@ -1,0 +1,11 @@
+# Add to the shared Caddyfile at /opt/projects/_proxy/Caddyfile on the VPS.
+# Automatic HTTPS via Let's Encrypt. Update the domain once it's registered
+# (recommended: curatedlivingdubai.com, with curatedliving.co as the short brand URL).
+
+curatedlivingdubai.com, www.curatedlivingdubai.com {
+	encode zstd gzip
+	reverse_proxy 127.0.0.1:3008 {
+		header_up X-Forwarded-Host {host}
+		header_up X-Forwarded-Proto {scheme}
+	}
+}

@@ -1,0 +1,33 @@
+# Curated Living — production compose.
+# Isolated network, healthcheck, restart policy and memory limit per VPS conventions.
+# Caddy (shared, at /opt/projects/_proxy/) reverse-proxies curatedlivingdubai.com -> 127.0.0.1:3008.
+
+services:
+  app:
+    build: .
+    image: curated-living:latest
+    container_name: curated-living
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - HOSTNAME=0.0.0.0
+    ports:
+      # bind to loopback only; the shared Caddy terminates TLS and proxies in
+      - "127.0.0.1:3008:3000"
+    networks:
+      - curated
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:3000/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    mem_limit: 512m
+    cpus: 1.0
+
+networks:
+  curated:
+    driver: bridge
