@@ -8,7 +8,7 @@ import { site, packages, unitSizes, aed, addOns } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Packages & Pricing",
   description:
-    "Fixed-price furnishing packs for Dubai property — Essential, Premium and Holiday Home, from AED 15,000, by unit size. Plus a fully bespoke service: fixed design fee, furniture at cost, 5–10% management. Studio to 4 BHK.",
+    "Fixed-price furnishing packs for Dubai property — Essential, Premium and Holiday Home, from AED 15,000, by unit size (studio to 4 BHK). Plus a fully bespoke service for 1-bed and larger: fixed design fee, furniture at cost, flat 10% management.",
   alternates: { canonical: "/packages" },
 };
 
@@ -103,9 +103,9 @@ export default function PackagesPage() {
                   transparent pricing.
                 </p>
                 <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 14, marginTop: 28 }}>
-                  <li className="pkg-li" style={{ color: "var(--muted-2)" }}>A fixed design fee, set by unit size</li>
+                  <li className="pkg-li" style={{ color: "var(--muted-2)" }}>A fixed design fee, set by unit size (1 BHK and up)</li>
                   <li className="pkg-li" style={{ color: "var(--muted-2)" }}>Furniture billed at cost — you see every figure</li>
-                  <li className="pkg-li" style={{ color: "var(--muted-2)" }}>A 5–10% management fee on the furnishing value</li>
+                  <li className="pkg-li" style={{ color: "var(--muted-2)" }}>A flat 10% management fee on the furnishing value</li>
                 </ul>
                 <Link href="/contact" className="btn btn-gold" style={{ marginTop: 32 }}>
                   Start a bespoke project <span className="arr">→</span>
@@ -118,17 +118,20 @@ export default function PackagesPage() {
                     <span>Unit size</span>
                     <span>Design fee</span>
                   </div>
-                  {unitSizes.map((s, i) => (
-                    <div key={s} style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", padding: "20px 24px", borderBottom: i < unitSizes.length - 1 ? "1px solid var(--line-d)" : "none" }}>
-                      <span style={{ color: "var(--paper)" }}>{s}</span>
-                      <span style={{ fontFamily: "var(--font-sans)", fontWeight: 300, fontSize: "clamp(20px,2.4vw,28px)", color: "var(--gold-2)", fontVariantNumeric: "tabular-nums" }}>
-                        {aed(bespoke.designFee![i])}
-                      </span>
-                    </div>
-                  ))}
+                  {unitSizes
+                    .map((s, i) => ({ s, fee: bespoke.designFee?.[i] }))
+                    .filter((r) => r.fee != null)
+                    .map((r, idx, arr) => (
+                      <div key={r.s} style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", padding: "20px 24px", borderBottom: idx < arr.length - 1 ? "1px solid var(--line-d)" : "none" }}>
+                        <span style={{ color: "var(--paper)" }}>{r.s}</span>
+                        <span style={{ fontFamily: "var(--font-sans)", fontWeight: 300, fontSize: "clamp(20px,2.4vw,28px)", color: "var(--gold-2)", fontVariantNumeric: "tabular-nums" }}>
+                          {aed(r.fee as number)}
+                        </span>
+                      </div>
+                    ))}
                 </div>
                 <p style={{ marginTop: 16, fontSize: 12.5, color: "var(--muted-2)", lineHeight: 1.6 }}>
-                  Furniture is additional, billed at cost, plus a 5–10% management fee. Quoted in writing
+                  Furniture is additional, billed at cost, plus a flat 10% management fee. Quoted in writing
                   before anything is ordered.
                 </p>
               </div>

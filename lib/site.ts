@@ -67,7 +67,7 @@ export type Package = {
   model: "fixed" | "bespoke";
   // Fixed packs: full furnishing price per unit size (AED). Bespoke: design fee per unit size.
   prices?: number[];
-  designFee?: number[];
+  designFee?: (number | null)[]; // null = size not offered (e.g. Bespoke has no studio)
   start: string; // card display, e.g. "from AED 15,000"
   priceNote: string;
 };
@@ -146,7 +146,7 @@ export const packages: Package[] = [
     slug: "bespoke",
     name: "Bespoke",
     tagline: "Fully custom",
-    for: "Owner-occupiers · Studio – 4 BHK",
+    for: "Owner-occupiers · 1 – 4 BHK",
     blurb:
       "For owners who'll live in the home and want something personal, not a pack. A custom scheme designed around you — the service most furnishing companies don't offer.",
     points: [
@@ -157,9 +157,10 @@ export const packages: Package[] = [
       "Living-in luxury, not a generic pack",
     ],
     model: "bespoke",
-    designFee: [5000, 7000, 10000, 13000, 16000],
-    start: "design fee from AED 5,000",
-    priceNote: "design fee + furniture at cost + 5–10%",
+    // Studio not offered for Bespoke (null) — starts at 1 BHK.
+    designFee: [null, 7000, 10000, 13000, 16000],
+    start: "design fee from AED 7,000",
+    priceNote: "design fee + furniture at cost + flat 10%",
   },
 ];
 
@@ -356,7 +357,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "How does pricing work?",
-    a: "The Essential, Premium and Holiday Home packs are a fixed, all-in price set by unit size — from AED 15,000 for an Essential studio up to AED 34,000 for a Holiday Home four-bed, furniture included. Holiday Home sits AED 4,000 above Premium at every size because it includes the basic OS&E a short-let needs — cutlery, crockery, linens and kitchen kit — as standard. No budget guesswork. The Bespoke service is different: a fixed design fee by unit size (from AED 5,000 for a studio), furniture billed transparently at cost, plus a 5–10% management fee on the total furnishing value. An optional Electronics Pack (TV, microwave, kettle, etc.) can be added to any pack.",
+    a: "The Essential, Premium and Holiday Home packs are a fixed, all-in price set by unit size — from AED 15,000 for an Essential studio up to AED 34,000 for a Holiday Home four-bed, furniture included. Holiday Home sits AED 4,000 above Premium at every size because it includes the basic OS&E a short-let needs — cutlery, crockery, linens and kitchen kit — as standard. No budget guesswork. The Bespoke service is for 1-bed and larger homes (it isn't offered for studios): a fixed design fee by unit size (from AED 7,000 for a 1-bed), furniture billed transparently at cost, plus a flat 10% management fee on the total furnishing value. An optional Electronics Pack (TV, microwave, kettle, etc.) can be added to any pack.",
   },
   {
     q: "How long does it take?",

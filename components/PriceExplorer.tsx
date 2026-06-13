@@ -32,15 +32,24 @@ export default function PriceExplorer() {
       <div className="px-grid">
         {packages.map((p) => {
           const value = p.model === "fixed" ? p.prices?.[i] : p.designFee?.[i];
+          const unavailable = value == null; // e.g. Bespoke has no studio
           return (
             <div className={`px-card${p.featured ? " feature" : ""}`} key={p.slug}>
               <span className="px-pn">{p.name}</span>
-              <span className="px-pp">
-                <span className="cur">AED</span>
-                {num(value ?? 0)}
-              </span>
+              {unavailable ? (
+                <span className="px-pp px-na">From 1&nbsp;BHK</span>
+              ) : (
+                <span className="px-pp">
+                  <span className="cur">AED</span>
+                  {num(value)}
+                </span>
+              )}
               <span className="px-sub">
-                {p.model === "fixed" ? "fully furnished, all-in" : "design fee · furniture at cost + 5–10%"}
+                {p.model === "fixed"
+                  ? "fully furnished, all-in"
+                  : unavailable
+                    ? "Bespoke isn't offered for studios"
+                    : "design fee · furniture at cost + flat 10%"}
               </span>
             </div>
           );
@@ -50,7 +59,7 @@ export default function PriceExplorer() {
       <p className="px-note">
         Essential, Premium &amp; Holiday Home are fixed, all-in prices — furniture included, no budget
         guesswork. Bespoke is a fixed design fee by unit size, furniture billed transparently at cost,
-        plus a 5–10% management fee. Every unit is confirmed with a written quote.
+        plus a flat 10% management fee. Bespoke starts at 1 BHK. Every unit is confirmed with a written quote.
       </p>
     </div>
   );

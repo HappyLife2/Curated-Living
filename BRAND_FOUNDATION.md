@@ -136,11 +136,12 @@ crockery, glassware, cookware, one set of linens & towels) — so it's genuinely
 > **Optional add-on (any pack) — Electronics Pack:** TV, microwave, toaster, kettle, hairdryer, iron and
 > the everyday electronics a home needs, sourced and set up with the furniture. Quoted per unit.
 
-### 4. Bespoke — *fully custom, for the home you'll live in*
+### 4. Bespoke — *fully custom, for the home you'll live in* (1 BHK and up)
 For: owner-occupiers who want a personal scheme, not a pack. **This is the differentiator** — the
-service most furnishing companies don't offer.
+service most furnishing companies don't offer. **Not offered for studios** (studio owners are almost
+always investors, better served by a fixed pack).
 - A custom scheme designed to your taste
-- Fixed design fee by unit size
+- Fixed design fee by unit size (from 1 BHK)
 - Furniture billed at cost — fully transparent
 - Procurement, delivery, install & styling
 
@@ -168,10 +169,10 @@ this line is what keeps the model fast and solo-able.
 - **Optional add-on, any pack — Electronics Pack** (TV, microwave, toaster, kettle, hairdryer, iron,
   etc.), quoted per unit.
 
-### Bespoke (custom — different structure)
-- **Fixed design fee by unit size:** Studio 5,000 · 1 BHK 7,000 · 2 BHK 10,000 · 3 BHK 13,000 · 4 BHK 16,000
+### Bespoke (custom — different structure, 1 BHK and up)
+- **Fixed design fee by unit size:** 1 BHK 7,000 · 2 BHK 10,000 · 3 BHK 13,000 · 4 BHK 16,000 *(not offered for studios)*
 - **+ Furniture at actuals** — billed transparently at cost.
-- **+ 5–10% management fee** on total furnishing value.
+- **+ flat 10% management fee** on total furnishing value.
 
 > **Why fixed pricing wins:** it removes the single biggest hesitation for an investor (open-ended
 > cost) and makes the offer instantly comparable and easy to say yes to — while Bespoke captures the
