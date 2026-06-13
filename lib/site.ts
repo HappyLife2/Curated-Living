@@ -70,8 +70,17 @@ export type Package = {
   designFee?: number[];
   start: string; // card display, e.g. "from AED 15,000"
   priceNote: string;
-  addOn?: { name: string; desc: string; note: string };
 };
+
+// Optional add-ons, available with any pack.
+export type AddOn = { name: string; desc: string; note: string };
+export const addOns: AddOn[] = [
+  {
+    name: "Electronics Pack",
+    desc: "TV, microwave, toaster, kettle, hairdryer, iron and the everyday electronics a home needs — sourced, delivered and set up alongside the furniture.",
+    note: "optional · available with any pack · quoted per unit",
+  },
+];
 
 export const packages: Package[] = [
   {
@@ -125,18 +134,13 @@ export const packages: Package[] = [
       "Basic OS&E included — cutlery, crockery, linens & kitchen kit",
       "Styling for broad short-let appeal",
       "Photography-ready setup for listings",
-      "Optional OS&E upgrade & consumables (see below)",
+      "Optional re-style & refresh cycles",
     ],
     model: "fixed",
-    // Holiday Home = Premium + AED 2,000 per size; basic OS&E included as standard (its differentiator).
-    prices: [21000, 23000, 26000, 29000, 32000],
-    start: "from AED 21,000",
+    // Holiday Home = Premium + AED 4,000 per size; basic OS&E included as standard (its differentiator).
+    prices: [23000, 25000, 28000, 31000, 34000],
+    start: "from AED 23,000",
     priceNote: "incl. basic OS&E · guest-ready & photographed",
-    addOn: {
-      name: "OS&E Upgrade & Consumables",
-      desc: "Beyond the included basics: hotel-grade linens, robes and premium toiletries, a guest welcome pack and a consumables starter (with replenishment), plus extra linen & towel par levels for fast turnovers.",
-      note: "optional upgrade · quoted per unit",
-    },
   },
   {
     slug: "bespoke",
@@ -352,7 +356,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "How does pricing work?",
-    a: "The Essential, Premium and Holiday Home packs are a fixed, all-in price set by unit size — from AED 15,000 for an Essential studio up to AED 32,000 for a Holiday Home four-bed, furniture included. Holiday Home sits AED 2,000 above Premium at every size because it includes the basic OS&E a short-let needs — cutlery, crockery, linens and kitchen kit — as standard. No budget guesswork. The Bespoke service is different: a fixed design fee by unit size (from AED 5,000 for a studio), furniture billed transparently at cost, plus a 5–10% management fee on the total furnishing value.",
+    a: "The Essential, Premium and Holiday Home packs are a fixed, all-in price set by unit size — from AED 15,000 for an Essential studio up to AED 34,000 for a Holiday Home four-bed, furniture included. Holiday Home sits AED 4,000 above Premium at every size because it includes the basic OS&E a short-let needs — cutlery, crockery, linens and kitchen kit — as standard. No budget guesswork. The Bespoke service is different: a fixed design fee by unit size (from AED 5,000 for a studio), furniture billed transparently at cost, plus a 5–10% management fee on the total furnishing value. An optional Electronics Pack (TV, microwave, kettle, etc.) can be added to any pack.",
   },
   {
     q: "How long does it take?",

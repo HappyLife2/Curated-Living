@@ -2,15 +2,17 @@
 
 import { useState } from "react";
 import Select from "./Select";
+import { packages, unitSizes } from "@/lib/site";
 
-const TYPES = [
-  "Essential pack",
-  "Premium pack",
-  "Holiday Home pack",
-  "Bespoke — fully custom",
-  "Multiple units / portfolio",
-  "Referral partner enquiry",
-  "Not sure yet",
+const PACKAGE_OPTIONS = [...packages.map((p) => p.name), "Not sure yet"];
+const SIZE_OPTIONS = [...unitSizes, "Not sure yet"];
+const PURPOSE_OPTIONS = [
+  "To rent out (long-let)",
+  "Personal use",
+  "Sub-lease",
+  "Airbnb / short-let",
+  "Holiday home",
+  "Other",
 ];
 
 type Status = "idle" | "sending" | "ok" | "error";
@@ -48,7 +50,7 @@ export default function ContactForm() {
         <h3>Thank you.</h3>
         <p>
           Your enquiry is in. Melissa will be in touch shortly — usually the same day — to talk
-          through your unit, budget and timeline.
+          through your unit, package and timeline.
         </p>
       </div>
     );
@@ -61,10 +63,12 @@ export default function ContactForm() {
         <label htmlFor="company">Company</label>
         <input id="company" name="company" type="text" tabIndex={-1} autoComplete="off" />
       </div>
+
       <div className="field">
         <label htmlFor="name">Name</label>
         <input id="name" name="name" type="text" required autoComplete="name" />
       </div>
+
       <div className="field-row">
         <div className="field">
           <label htmlFor="email">Email</label>
@@ -72,22 +76,40 @@ export default function ContactForm() {
         </div>
         <div className="field">
           <label htmlFor="phone">Phone / WhatsApp</label>
-          <input id="phone" name="phone" type="tel" autoComplete="tel" />
+          <input id="phone" name="phone" type="tel" required autoComplete="tel" />
         </div>
       </div>
+
       <div className="field-row">
         <div className="field">
-          <label htmlFor="type">What do you need?</label>
-          <Select id="type" name="type" options={TYPES} defaultValue={TYPES[0]} />
+          <label htmlFor="package">Package</label>
+          <Select id="package" name="package" options={PACKAGE_OPTIONS} defaultValue="Not sure yet" />
         </div>
         <div className="field">
-          <label htmlFor="community">Community / area</label>
-          <input id="community" name="community" type="text" placeholder="e.g. Dubai Marina" autoComplete="off" />
+          <label htmlFor="unitSize">Unit size</label>
+          <Select id="unitSize" name="unitSize" options={SIZE_OPTIONS} defaultValue="Not sure yet" />
         </div>
       </div>
+
+      <div className="field-row">
+        <div className="field">
+          <label htmlFor="purpose">Purpose of the unit</label>
+          <Select id="purpose" name="purpose" options={PURPOSE_OPTIONS} defaultValue={PURPOSE_OPTIONS[0]} />
+        </div>
+        <div className="field">
+          <label htmlFor="budget">Budget (optional)</label>
+          <input id="budget" name="budget" type="text" placeholder="e.g. AED 25,000" autoComplete="off" />
+        </div>
+      </div>
+
       <div className="field">
-        <label htmlFor="message">Tell us about the unit</label>
-        <textarea id="message" name="message" rows={5} required placeholder="Size, handover status, budget if you have one, and when you'd like it rent-ready." />
+        <label htmlFor="area">Area / location of property</label>
+        <input id="area" name="area" type="text" placeholder="e.g. Dubai Marina" autoComplete="off" />
+      </div>
+
+      <div className="field">
+        <label htmlFor="message">Anything else? (optional)</label>
+        <textarea id="message" name="message" rows={4} placeholder="Handover status, timeline, or anything we should know." />
       </div>
 
       {status === "error" && <p className="form-error">{error}</p>}

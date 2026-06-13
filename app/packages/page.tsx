@@ -3,7 +3,7 @@ import Link from "next/link";
 import Reveals from "@/components/Reveals";
 import Faq from "@/components/Faq";
 import PriceExplorer from "@/components/PriceExplorer";
-import { site, packages, unitSizes, aed } from "@/lib/site";
+import { site, packages, unitSizes, aed, addOns } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Packages & Pricing",
@@ -13,7 +13,6 @@ export const metadata: Metadata = {
 };
 
 const bespoke = packages.find((p) => p.slug === "bespoke");
-const holiday = packages.find((p) => p.slug === "holiday-home");
 
 export default function PackagesPage() {
   return (
@@ -71,20 +70,20 @@ export default function PackagesPage() {
             <PriceExplorer />
           </div>
 
-          {holiday?.addOn && (
-            <div data-reveal style={{ marginTop: "clamp(28px,3vw,44px)", border: "1px solid var(--line)", borderRadius: 3, padding: "clamp(22px,2.4vw,32px)", display: "flex", gap: 28, alignItems: "flex-start", flexWrap: "wrap", background: "var(--paper-2)" }}>
+          {addOns.map((a) => (
+            <div key={a.name} data-reveal style={{ marginTop: "clamp(28px,3vw,44px)", border: "1px solid var(--line)", borderRadius: 3, padding: "clamp(22px,2.4vw,32px)", display: "flex", gap: 28, alignItems: "flex-start", flexWrap: "wrap", background: "var(--paper-2)" }}>
               <div style={{ flex: "1 1 220px" }}>
-                <span className="eyebrow">Holiday Home add-on</span>
+                <span className="eyebrow">Optional add-on</span>
                 <h3 style={{ fontFamily: "var(--font-sans)", fontWeight: 300, fontSize: "clamp(22px,2.2vw,30px)", marginTop: 12 }}>
-                  {holiday.addOn.name}
+                  {a.name}
                 </h3>
-                <span style={{ fontSize: 12, letterSpacing: ".04em", color: "var(--gold)", textTransform: "uppercase" }}>{holiday.addOn.note}</span>
+                <span style={{ fontSize: 12, letterSpacing: ".04em", color: "var(--gold)", textTransform: "uppercase" }}>{a.note}</span>
               </div>
               <p style={{ flex: "2 1 320px", color: "var(--ink-soft)", fontSize: "clamp(15px,1.3vw,17px)", lineHeight: 1.6 }}>
-                {holiday.addOn.desc}
+                {a.desc}
               </p>
             </div>
-          )}
+          ))}
         </div>
       </section>
 

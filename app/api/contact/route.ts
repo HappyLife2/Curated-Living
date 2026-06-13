@@ -6,9 +6,12 @@ type Payload = {
   name?: string;
   email?: string;
   phone?: string;
-  type?: string;
+  package?: string;
+  unitSize?: string;
+  purpose?: string;
+  budget?: string;
+  area?: string;
   message?: string;
-  community?: string;
   company?: string; // honeypot — humans never fill this
 };
 
@@ -59,13 +62,17 @@ export async function POST(req: Request) {
 
   const name = (data.name || "").trim();
   const email = (data.email || "").trim();
-  const message = (data.message || "").trim();
   const phone = (data.phone || "").trim();
-  const type = (data.type || "General enquiry").trim();
+  const pkg = (data.package || "—").trim();
+  const unitSize = (data.unitSize || "—").trim();
+  const purpose = (data.purpose || "—").trim();
+  const budget = (data.budget || "—").trim();
+  const area = (data.area || "—").trim();
+  const message = (data.message || "").trim();
 
-  if (!name || !email || !message) {
+  if (!name || !email || !phone) {
     return NextResponse.json(
-      { ok: false, error: "Please complete name, email and message." },
+      { ok: false, error: "Please complete name, email and phone." },
       { status: 422 }
     );
   }
@@ -73,14 +80,13 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, error: "Please enter a valid email." }, { status: 422 });
   }
 
-  const community = (data.community || "").trim();
   const key = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_TO || "melissa.madonna95@gmail.com";
   const from = process.env.CONTACT_FROM || "Curated Living <onboarding@resend.dev>";
 
   // No key configured (e.g. domain not live yet): accept + log, don't fail the UX.
   if (!key) {
-    console.log("[contact] (no RESEND_API_KEY) enquiry:", { name, email, phone, type, community });
+    console.log("[contact] (no RESEND_API_KEY) enquiry:", { name, email, phone, package: pkg, unitSize, purpose, budget, area });
     return NextResponse.json({ ok: true, queued: false });
   }
 
@@ -95,8 +101,8 @@ export async function POST(req: Request) {
         from,
         to: [to],
         reply_to: email,
-        subject: `New enquiry — ${type} — ${name}`,
-        text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone || "—"}\nNeed: ${type}\nCommunity: ${community || "—"}\n\n${message}`,
+        subject: `New enquiry — ${pkg} — ${name}`,
+        text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nPackage: ${pkg}\nUnit size: ${unitSize}\nPurpose: ${purpose}\nBudget: ${budget}\nArea / location: ${area}\n\n${message || "—"}`,
       }),
     });
     if (!res.ok) {

@@ -125,15 +125,16 @@ For: owners & premium rentals who want a step up.
 - Full turnkey handover
 
 ### 3. Holiday Home — *short-let / Airbnb, guest-ready*
-For: Airbnb & holiday-home operators. **Premium + AED 2,000 per size.** The differentiator: it
+For: Airbnb & holiday-home operators. **Premium + AED 4,000 per size.** The differentiator: it
 **includes basic OS&E as standard** — the durable supplies a short-let must have to host (cutlery,
 crockery, glassware, cookware, one set of linens & towels) — so it's genuinely guest-ready out of the box.
 - Premium-level furnishing & broad-appeal styling
 - **Basic OS&E included** (durable: cutlery, crockery, linens, kitchen kit)
 - Photography-ready setup (listing photos)
 - Optional re-style / refresh cycles
-- **OS&E Upgrade & Consumables add-on (optional, quoted per unit):** hotel-grade linens, robes &
-  premium toiletries, guest welcome pack, consumables starter + replenishment, extra linen/towel par levels.
+
+> **Optional add-on (any pack) — Electronics Pack:** TV, microwave, toaster, kettle, hairdryer, iron and
+> the everyday electronics a home needs, sourced and set up with the furniture. Quoted per unit.
 
 ### 4. Bespoke — *fully custom, for the home you'll live in*
 For: owner-occupiers who want a personal scheme, not a pack. **This is the differentiator** — the
@@ -159,12 +160,13 @@ this line is what keeps the model fast and solo-able.
 |---|---|---|---|---|---|
 | **Essential** | 15,000 | 17,000 | 20,000 | 23,000 | 26,000 |
 | **Premium** | 19,000 | 21,000 | 24,000 | 27,000 | 30,000 |
-| **Holiday Home** | 21,000 | 23,000 | 26,000 | 29,000 | 32,000 |
+| **Holiday Home** | 23,000 | 25,000 | 28,000 | 31,000 | 34,000 |
 
 - Premium = Essential **+ AED 4,000** at every size.
-- Holiday Home = **Premium + AED 2,000** at every size, and **includes basic OS&E** as standard
-  (durable supplies the short-let needs). The optional **OS&E Upgrade & Consumables** add-on
-  (hotel-grade linens, premium toiletries, welcome pack, consumables + replenishment) is quoted per unit.
+- Holiday Home = **Premium + AED 4,000** at every size, and **includes basic OS&E** as standard
+  (durable supplies the short-let needs to host).
+- **Optional add-on, any pack — Electronics Pack** (TV, microwave, toaster, kettle, hairdryer, iron,
+  etc.), quoted per unit.
 
 ### Bespoke (custom — different structure)
 - **Fixed design fee by unit size:** Studio 5,000 · 1 BHK 7,000 · 2 BHK 10,000 · 3 BHK 13,000 · 4 BHK 16,000
@@ -175,8 +177,8 @@ this line is what keeps the model fast and solo-able.
 > cost) and makes the offer instantly comparable and easy to say yes to — while Bespoke captures the
 > higher-touch owner-occupier the pack model can't serve.
 
-> **Open item:** the OS&E **Upgrade & Consumables** add-on is priced per unit (no fixed figure set yet);
-> the *basic* OS&E is included in the Holiday Home price.
+> **Open item:** the **Electronics Pack** add-on is priced per unit (no fixed figure set yet). Basic OS&E
+> is included in the Holiday Home price.
 
 ---
 

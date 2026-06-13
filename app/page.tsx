@@ -104,7 +104,7 @@ export default function Home() {
             </p>
           </div>
           <div data-reveal>
-            <Transform src="/projects/showroom.jpg" alt="Dubai apartment furnished by Curated Living" />
+            <Transform after="/projects/showroom.jpg" alt="Dubai apartment furnished by Curated Living" />
           </div>
         </div>
       </section>
