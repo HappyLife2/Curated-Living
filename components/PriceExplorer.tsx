@@ -6,12 +6,17 @@ import { unitSizes, packages } from "@/lib/site";
 // Deterministic thousands formatting (no locale → no hydration mismatch).
 const num = (n: number) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
+const valueFor = (p: (typeof packages)[number], i: number) =>
+  p.model === "fixed" ? p.prices?.[i] : p.designFee?.[i];
+
 /**
  * Pick a unit size; every pack's fixed price (and the bespoke design fee)
- * updates live. Accurate to the fixed-price model — no budget guesswork.
+ * updates live. Packs not offered at a size (e.g. Bespoke has no studio)
+ * are dropped entirely and the grid reflows.
  */
 export default function PriceExplorer() {
   const [i, setI] = useState(0);
+  const visible = packages.filter((p) => valueFor(p, i) != null);
 
   return (
     <div className="px">
@@ -29,37 +34,25 @@ export default function PriceExplorer() {
         ))}
       </div>
 
-      <div className="px-grid">
-        {packages.map((p) => {
-          const value = p.model === "fixed" ? p.prices?.[i] : p.designFee?.[i];
-          const unavailable = value == null; // e.g. Bespoke has no studio
-          return (
-            <div className={`px-card${p.featured ? " feature" : ""}`} key={p.slug}>
-              <span className="px-pn">{p.name}</span>
-              {unavailable ? (
-                <span className="px-pp px-na">From 1&nbsp;BHK</span>
-              ) : (
-                <span className="px-pp">
-                  <span className="cur">AED</span>
-                  {num(value)}
-                </span>
-              )}
-              <span className="px-sub">
-                {p.model === "fixed"
-                  ? "fully furnished, all-in"
-                  : unavailable
-                    ? "Bespoke isn't offered for studios"
-                    : "design fee · furniture at cost + flat 10%"}
-              </span>
-            </div>
-          );
-        })}
+      <div className="px-grid" style={{ ["--cols" as string]: String(visible.length) } as React.CSSProperties}>
+        {visible.map((p) => (
+          <div className={`px-card${p.featured ? " feature" : ""}`} key={p.slug}>
+            <span className="px-pn">{p.name}</span>
+            <span className="px-pp">
+              <span className="cur">AED</span>
+              {num(valueFor(p, i) as number)}
+            </span>
+            <span className="px-sub">
+              {p.model === "fixed" ? "fully furnished, all-in" : "design fee · furniture at cost + flat 10%"}
+            </span>
+          </div>
+        ))}
       </div>
 
       <p className="px-note">
         Essential, Premium &amp; Holiday Home are fixed, all-in prices — furniture included, no budget
-        guesswork. Bespoke is a fixed design fee by unit size, furniture billed transparently at cost,
-        plus a flat 10% management fee. Bespoke starts at 1 BHK. Every unit is confirmed with a written quote.
+        guesswork. Bespoke (1 BHK and up) is a fixed design fee by unit size, furniture billed at cost,
+        plus a flat 10% management fee. Every unit is confirmed with a written quote.
       </p>
     </div>
   );
