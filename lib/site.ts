@@ -70,6 +70,7 @@ export type Package = {
   designFee?: number[];
   start: string; // card display, e.g. "from AED 15,000"
   priceNote: string;
+  addOn?: { name: string; desc: string; note: string };
 };
 
 export const packages: Package[] = [
@@ -120,17 +121,22 @@ export const packages: Package[] = [
     blurb:
       "Furnishing and styling tuned for short-let durability and broad guest appeal — handed over photo-ready for the listing.",
     points: [
-      "Durable, guest-ready specification",
+      "Premium furnishing, guest-ready spec",
       "Styling for broad short-let appeal",
       "Photography-ready setup for listings",
-      "Guest essentials — the hotel touches",
+      "Optional OS&E add-on (see below)",
       "Optional re-style & refresh cycles",
     ],
     model: "fixed",
-    // NOTE: Holiday Home pricing not yet specified — mirrors Premium as a placeholder; confirm with Melissa.
+    // Holiday Home priced as Premium, with an optional OS&E add-on.
     prices: [19000, 21000, 24000, 27000, 30000],
     start: "from AED 19,000",
-    priceNote: "guest-ready & photographed · indicative",
+    priceNote: "priced as Premium · guest-ready & photographed",
+    addOn: {
+      name: "OS&E Pack",
+      desc: "Operating supplies & equipment — toiletries, cutlery, crockery, glassware, linens, kitchen essentials and guest consumables. Everything a guest touches, stocked and ready.",
+      note: "optional add-on · quoted per unit",
+    },
   },
   {
     slug: "bespoke",

@@ -105,34 +105,41 @@ Supporting proof points:
 
 ## 6. Services & packages
 
-Sell **packages, not bespoke**. Standardisation is the entire profit engine — the more repeatable
-the process, the higher the profit per hour. Three tiers:
+Four offers — three **fixed-price packs** (the repeatable profit engine) and one **bespoke** service
+(the differentiator). Every pack covers Studio → 4 BHK.
 
-### Investor Essential — *studio / 1BR, rental-ready*
+### 1. Essential — *the standard pack*
 For: investors & landlords furnishing to let.
-- Furnishing concept + curated furniture selection
-- Procurement + supplier coordination
-- Delivery coordination + installation oversight
-- Final styling
-- Tenant-ready handover
+- Full furniture across every room
+- Lighting, soft furnishings & essentials
+- Procurement, delivery & installation
+- Styling & tenant-ready handover
+- Fixed price — no surprises
 
-### Premium Living — *elevated, higher-end finish*
+### 2. Premium — *elevated furnishing*
 For: owners & premium rentals who want a step up.
 - Everything in Essential, plus:
 - Higher-end furniture & decorative lighting
-- Artwork & accessories
-- Soft furnishings / layering
+- Artwork & curated accessories
+- Layered textiles & soft furnishings
 - Full turnkey handover
 
-### Holiday Home — *short-let / Airbnb, guest-ready*
-For: Airbnb & holiday-home operators.
-- Furnishing + styling tuned for short-let durability & broad guest appeal
+### 3. Holiday Home — *short-let / Airbnb, guest-ready*
+For: Airbnb & holiday-home operators. **Priced as Premium**, plus an optional add-on:
+- Durable, guest-ready specification & broad-appeal styling
 - Photography-ready setup (listing photos)
-- Guest-ready accessories (the "hotel" touches)
-- Optional re-styling / refresh cycles
+- Optional re-style / refresh cycles
+- **OS&E Pack add-on (optional, quoted per unit):** Operating Supplies & Equipment — toiletries,
+  cutlery, crockery, glassware, linens, kitchen essentials and guest consumables. Everything a guest
+  touches, stocked and ready.
 
-> **Add-ons (à-la-carte, higher margin):** styling-only refresh, artwork & accessory pack,
-> photography coordination, re-fit between tenants, white-glove handover.
+### 4. Bespoke — *fully custom, for the home you'll live in*
+For: owner-occupiers who want a personal scheme, not a pack. **This is the differentiator** — the
+service most furnishing companies don't offer.
+- A custom scheme designed to your taste
+- Fixed design fee by unit size
+- Furniture billed at cost — fully transparent
+- Procurement, delivery, install & styling
 
 **Scope guardrails (what Curated Living does NOT do):** technical drawings, authority approvals,
 joinery/contracting, renovation, MEP — those belong to Atelier Madonna / fit-out firms. Holding
@@ -142,32 +149,30 @@ this line is what keeps the model fast and solo-able.
 
 ## 7. Pricing model
 
-The most profitable structure is a **combination**, not a single fee. Recommended default:
+**Fixed, all-in prices by unit size** for the three packs (no budget guesswork), and a transparent
+**design-fee model** for Bespoke.
 
-### → Fixed project fee + procurement fee (the recommended model)
-- **Fixed design/styling fee:** AED 5,000–8,000 for a 1BR
-- **Procurement management fee:** ~10% of the furnishing budget
-- Clients accept this readily because it's "payment for real work," not a visible markup.
+### Fixed-price packs (AED, furniture included)
+| Pack | Studio | 1 BHK | 2 BHK | 3 BHK | 4 BHK |
+|---|---|---|---|---|---|
+| **Essential** | 15,000 | 17,000 | 20,000 | 23,000 | 26,000 |
+| **Premium** | 19,000 | 21,000 | 24,000 | 27,000 | 30,000 |
+| **Holiday Home** | 19,000 | 21,000 | 24,000 | 27,000 | 30,000 |
 
-### → Turnkey package price (preferred by hands-off investors)
-- One number: *"AED 60,000, fully furnished, rent-ready."*
-- Internal cost ~AED 50,000 → ~AED 10,000 gross margin.
-- Investors love it: no 50 quotations to review, one decision.
+- Premium = Essential **+ AED 4,000** at every size.
+- Holiday Home is **priced as Premium**, with the optional **OS&E Pack** add-on (toiletries, cutlery,
+  linens, guest consumables) quoted per unit on top.
 
-### Worked example — AED 50,000 furnishing budget (1BR)
-| Model | What client sees | Your earnings |
-|---|---|---|
-| Flat fee only | AED 5–10k service fee | AED 5,000–10,000 |
-| % of budget (10–20%) | 10–20% fee | AED 5,000–10,000 |
-| Trade-discount model | Pays retail AED 50k; you source at trade | ~AED 7,500 (be transparent in contract) |
-| **Fixed fee + procurement (recommended)** | AED 4–8k fee + 10% mgmt | **≈ AED 9,000** |
-| Turnkey package | "AED 60k done" | ~AED 10,000 |
+### Bespoke (custom — different structure)
+- **Fixed design fee by unit size:** Studio 5,000 · 1 BHK 7,000 · 2 BHK 10,000 · 3 BHK 13,000 · 4 BHK 16,000
+- **+ Furniture at actuals** — billed transparently at cost.
+- **+ 5–10% management fee** on total furnishing value.
 
-**Realistic per-1BR earnings in Dubai:** floor ≈ AED 5,000 · comfortable target AED 7,500–12,000 ·
-strong sourcing & package design AED 12,000–15,000+.
+> **Why fixed pricing wins:** it removes the single biggest hesitation for an investor (open-ended
+> cost) and makes the offer instantly comparable and easy to say yes to — while Bespoke captures the
+> higher-touch owner-occupier the pack model can't serve.
 
-> **Transparency note:** if using trade-discount margins, disclose appropriately in contracts and
-> check supplier agreements — Melissa's reputation is the asset.
+> **Open item:** OS&E Pack add-on pricing not yet set — currently "quoted per unit" on the site.
 
 ---
 
